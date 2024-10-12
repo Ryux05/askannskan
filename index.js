@@ -7,7 +7,7 @@ const nyenye = (url) => {
     const gateway = parseUrl.searchParams.get("r");
     
     // Menggunakan Buffer untuk mendekode string Base64
-    const decodedLink = Buffer.from(gateway, "base64").toString("utf-8");
+    const decodedLink = Buffer.from(encodeURIComponent(gateway), "base64").toString("utf-8");
     return decodedLink;
 };
 
