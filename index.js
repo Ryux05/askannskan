@@ -13,7 +13,7 @@ app.get('/decode', (req, res) => {
         // Dekode Base64
         const decoded = Buffer.from(rParam, 'base64').toString('utf-8');
 
-        return res.json({ decoded_url: decoded });
+        return res.json({ url: decoded });
     } catch (error) {
         return res.status(500).json({ error: "Terjadi kesalahan saat mendekode parameter 'r'." });
     }
