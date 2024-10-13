@@ -7,13 +7,13 @@ app.get('/decode', (req, res) => {
     const gila = new URL(memek);
     const jnck = gila.searchParam.get("r");
 
-    if (!rParam) {
+    if (!memek) {
         return res.status(400).json({ error: "Parameter 'r' tidak ditemukan dalam URL." });
     }
 
     try {
         // Dekode Base64
-        const decoded = Buffer.from(encodeURIComponent(rParam), 'base64').toString('utf-8');
+        const decoded = Buffer.from(encodeURIComponent(jnck), 'base64').toString('utf-8');
 
         return res.json({ url: decoded });
     } catch (error) {
