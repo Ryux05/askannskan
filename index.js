@@ -3,7 +3,9 @@ const app = express();
 
 // Endpoint untuk mendekode parameter 'r' secara langsung
 app.get('/decode', (req, res) => {
-    const rParam = req.query.r;
+    const memek = req.query.url;
+    const gila = new URL(memek);
+    const jnck = gila.searchParam.get("r");
 
     if (!rParam) {
         return res.status(400).json({ error: "Parameter 'r' tidak ditemukan dalam URL." });
