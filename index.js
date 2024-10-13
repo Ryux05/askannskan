@@ -11,7 +11,7 @@ app.get('/decode', (req, res) => {
 
     try {
         // Dekode Base64
-        const decoded = Buffer.from(rParam, 'base64').toString('utf-8');
+        const decoded = Buffer.from(encodeURIComponent(rParam), 'base64').toString('utf-8');
 
         return res.json({ url: decoded });
     } catch (error) {
